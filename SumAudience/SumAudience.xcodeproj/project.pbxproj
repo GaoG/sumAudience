@@ -19,6 +19,8 @@
 		210D52C6247A65EC00B3A7EA /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210D52C5247A65EC00B3A7EA /* AnswerView.xib */; };
 		218A0F09247C18D3001646A5 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A0F07247C18D3001646A5 /* GCDAsyncUdpSocket.m */; };
 		218A0F0A247C18D3001646A5 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A0F08247C18D3001646A5 /* GCDAsyncSocket.m */; };
+		218A0F18247CB945001646A5 /* IpConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218A0F15247CB944001646A5 /* IpConfigView.xib */; };
+		218A0F19247CB945001646A5 /* IpConfigView.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A0F16247CB944001646A5 /* IpConfigView.m */; };
 		B18A5B910D4997B244B56FF3 /* Pods_SumAudience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB26B0C21994038EE64CA89C /* Pods_SumAudience.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,10 @@
 		218A0F06247C18D2001646A5 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		218A0F07247C18D3001646A5 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		218A0F08247C18D3001646A5 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		218A0F15247CB944001646A5 /* IpConfigView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IpConfigView.xib; sourceTree = "<group>"; };
+		218A0F16247CB944001646A5 /* IpConfigView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IpConfigView.m; sourceTree = "<group>"; };
+		218A0F17247CB944001646A5 /* IpConfigView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpConfigView.h; sourceTree = "<group>"; };
+		218A0F1A247CBA14001646A5 /* ConfigHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigHeader.h; sourceTree = "<group>"; };
 		6690BCBBAF50C0AF56FB1A54 /* Pods-SumAudience.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SumAudience.debug.xcconfig"; path = "Target Support Files/Pods-SumAudience/Pods-SumAudience.debug.xcconfig"; sourceTree = "<group>"; };
 		DB26B0C21994038EE64CA89C /* Pods_SumAudience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SumAudience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -86,6 +92,9 @@
 				210D52A5247A634300B3A7EA /* AppDelegate.m */,
 				210D52A7247A634300B3A7EA /* ViewController.h */,
 				210D52A8247A634300B3A7EA /* ViewController.m */,
+				218A0F17247CB944001646A5 /* IpConfigView.h */,
+				218A0F16247CB944001646A5 /* IpConfigView.m */,
+				218A0F15247CB944001646A5 /* IpConfigView.xib */,
 				210D52BA247A63ED00B3A7EA /* StartView.h */,
 				210D52BB247A63ED00B3A7EA /* StartView.m */,
 				210D52BC247A63ED00B3A7EA /* StartView.xib */,
@@ -93,6 +102,7 @@
 				210D52C3247A65D700B3A7EA /* AnswerView.m */,
 				210D52C5247A65EC00B3A7EA /* AnswerView.xib */,
 				210D52AA247A634300B3A7EA /* Main.storyboard */,
+				218A0F1A247CBA14001646A5 /* ConfigHeader.h */,
 				210D52AD247A634500B3A7EA /* Assets.xcassets */,
 				210D52AF247A634500B3A7EA /* LaunchScreen.storyboard */,
 				210D52B2247A634500B3A7EA /* Info.plist */,
@@ -189,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				210D52B1247A634500B3A7EA /* LaunchScreen.storyboard in Resources */,
+				218A0F18247CB945001646A5 /* IpConfigView.xib in Resources */,
 				210D52AE247A634500B3A7EA /* Assets.xcassets in Resources */,
 				210D52C6247A65EC00B3A7EA /* AnswerView.xib in Resources */,
 				210D52AC247A634300B3A7EA /* Main.storyboard in Resources */,
@@ -248,6 +259,7 @@
 				210D52A9247A634300B3A7EA /* ViewController.m in Sources */,
 				210D52B4247A634500B3A7EA /* main.m in Sources */,
 				210D52A6247A634300B3A7EA /* AppDelegate.m in Sources */,
+				218A0F19247CB945001646A5 /* IpConfigView.m in Sources */,
 				210D52C4247A65D700B3A7EA /* AnswerView.m in Sources */,
 				218A0F09247C18D3001646A5 /* GCDAsyncUdpSocket.m in Sources */,
 				218A0F0A247C18D3001646A5 /* GCDAsyncSocket.m in Sources */,
@@ -328,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -381,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -394,15 +406,18 @@
 			baseConfigurationReference = 6690BCBBAF50C0AF56FB1A54 /* Pods-SumAudience.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ATX6SQ3HRM;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 96E5N4445H;
 				INFOPLIST_FILE = SumAudience/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = text.com.SumAudience;
+				PRODUCT_BUNDLE_IDENTIFIER = test.com.SumAudience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = test;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -412,15 +427,18 @@
 			baseConfigurationReference = 0BAFF6B76D2BAF15911D8D83 /* Pods-SumAudience.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ATX6SQ3HRM;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 96E5N4445H;
 				INFOPLIST_FILE = SumAudience/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = text.com.SumAudience;
+				PRODUCT_BUNDLE_IDENTIFIER = test.com.SumAudience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = test;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

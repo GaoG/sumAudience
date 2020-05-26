@@ -10,7 +10,8 @@
 #import "StartView.h"
 #import "AnswerView.h"
 #import "GCDAsyncUdpSocket.h"
-
+#import "IpConfigView.h"
+#import "ConfigHeader.h"
 #define CLIENTPORT 8085
 #define SERVERPORT 9600
 
@@ -22,6 +23,9 @@
 
 @property (nonatomic, strong)NSMutableArray *viewArr;
 
+@property (nonatomic, strong)IpConfigView *configView;
+
+@property (nonatomic, copy)NSString  *configIP;
 @end
 
 @implementation ViewController {
@@ -47,18 +51,21 @@
     [self.view addSubview:self.answerView];
     [self.view addSubview:self.startView];
     
+    self.configView.frame = self.view.bounds;
+    
+    [self.view addSubview:self.configView];
+    
+    [self.viewArr addObjectsFromArray:@[self.startView,self.answerView,self.configView]];
+    
+    [self operateView:self.configView withState:NO];
     
     
-    [self.viewArr addObjectsFromArray:@[self.startView,self.answerView]];
-    
-    [self operateView:self.startView withState:NO];
-    
-    [self testMessage];
+//    [self testMessage:@""];
     
 }
 
 /// 测试消息
--(void)testMessage {
+-(void)testMessage:(NSString *)myIP {
     
     NSData *sendData = [@"testMessage" dataUsingEncoding:NSUTF8StringEncoding];
     [sendSocket sendData:sendData
@@ -80,13 +87,34 @@
 
 - (void)udpSocket:(GCDAsyncUdpSocket *)sock didReceiveData:(NSData *)data fromAddress:(NSData *)address withFilterContext:(id)filterContext {
     
+    
+    
     NSString *receiveStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    
+    
+    NSLog(@"服务器ip地址--->%@,host---%u,内容--->%@",
+          [GCDAsyncUdpSocket hostFromAddress:address],
+          [GCDAsyncUdpSocket portFromAddress:address],
+          receiveStr);
+    
+    NSString *tempIP = [GCDAsyncUdpSocket hostFromAddress:address];
+    
+    if (![tempIP isEqualToString:self.configIP]) {
+        return;
+    }
+    
+    
+    
     dispatch_sync(dispatch_get_main_queue(), ^{
         
         if([receiveStr isEqualToString:@"testMessage"]){
             
             UIAlertView *al = [[UIAlertView alloc]initWithTitle:@"提示" message:@"连接成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [al show];
+            
+            self.startView.tipsLabel.text = @"";
+            [self operateView:self.startView withState:NO];
             
         }else if ([receiveStr isEqualToString:@"10"]){
             /// 回答完毕
@@ -103,10 +131,6 @@
             [self operateView:self.startView withState:NO];
             
         }
-        
-        
-        
-        
         
         
     });
@@ -163,6 +187,28 @@
         }
         
     }
+}
+
+-(IpConfigView *)configView {
+    
+    
+    if (!_configView) {
+        _configView = [[[NSBundle mainBundle]loadNibNamed:@"IpConfigView" owner:nil options:nil]lastObject];
+        
+        @weakify(self)
+        _configView.connectBlock = ^(NSString *ID,NSString *mainIP,NSString *listIP,NSString *audienceIP, NSInteger type) {
+            @strongify(self)
+
+            self.configIP = mainIP;
+
+            [self testMessage:mainIP];
+
+        };
+        
+    }
+    
+    
+    return _configView;
 }
 
 
