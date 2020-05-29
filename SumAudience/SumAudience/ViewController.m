@@ -12,6 +12,9 @@
 #import "GCDAsyncUdpSocket.h"
 #import "IpConfigView.h"
 #import "ConfigHeader.h"
+#import "MathView.h"
+
+
 #define CLIENTPORT 8085
 #define SERVERPORT 9600
 
@@ -24,6 +27,10 @@
 @property (nonatomic, strong)NSMutableArray *viewArr;
 
 @property (nonatomic, strong)IpConfigView *configView;
+
+@property (nonatomic, strong)MathView *mathView;
+
+
 
 @property (nonatomic, copy)NSString  *configIP;
 @end
@@ -50,12 +57,12 @@
     
     [self.view addSubview:self.answerView];
     [self.view addSubview:self.startView];
-    
+    [self.view addSubview:self.mathView];
     self.configView.frame = self.view.bounds;
     
     [self.view addSubview:self.configView];
     
-    [self.viewArr addObjectsFromArray:@[self.startView,self.answerView,self.configView]];
+    [self.viewArr addObjectsFromArray:@[self.startView,self.answerView,self.configView,self.mathView]];
     
     [self operateView:self.configView withState:NO];
     
@@ -69,7 +76,7 @@
     
     NSData *sendData = [@"testMessage" dataUsingEncoding:NSUTF8StringEncoding];
     [sendSocket sendData:sendData
-                  toHost:@"192.168.0.106"
+                  toHost:myIP
                     port:SERVERPORT
              withTimeout:60
                      tag:200];
@@ -130,6 +137,31 @@
             self.startView.tipsLabel.text = @"晋级失败";
             [self operateView:self.startView withState:NO];
             
+        }else if ([receiveStr isEqualToString:@"40"]){
+            /// 晋级失败
+            self.startView.tipsLabel.text = @"回答正确";
+            [self operateView:self.startView withState:NO];
+            
+        }else {
+            
+        
+            /// 这个主要是分数
+            NSDictionary *dic = [self dictionaryWithJsonString:receiveStr];
+            /// 第四关汉字
+            if([dic[@"type"] isEqualToString:@"chineseType"]){
+                self.mathView.number =[NSString stringWithFormat:@"%@",dic[@"number"]];
+                [self operateView:self.mathView withState:NO];
+                
+            }else if ([dic[@"type"] isEqualToString:@"chineseHiden"]){
+              /// 隐藏数字
+                
+                self.startView.tipsLabel.text = @"";
+                [self operateView:self.startView withState:NO];
+                
+            }
+            
+            
+            
         }
         
         
@@ -173,6 +205,18 @@
     
     return _answerView;
 }
+
+-(MathView *)mathView {
+    
+    if (!_mathView) {
+        _mathView = [[[NSBundle mainBundle]loadNibNamed:@"MathView" owner:nil options:nil]lastObject];
+        _mathView.frame = self.view.bounds;
+    }
+    
+    return _mathView;
+}
+
+
 
 #pragma mark  隐藏或显示某个view
 
@@ -221,5 +265,26 @@
     return _viewArr;
     
 }
+
+
+//// 字符串转字典
+-(NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString
+{
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err){
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 
 @end

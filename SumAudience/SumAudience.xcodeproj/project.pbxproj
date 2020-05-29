@@ -17,6 +17,8 @@
 		210D52BE247A63ED00B3A7EA /* StartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210D52BC247A63ED00B3A7EA /* StartView.xib */; };
 		210D52C4247A65D700B3A7EA /* AnswerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210D52C3247A65D700B3A7EA /* AnswerView.m */; };
 		210D52C6247A65EC00B3A7EA /* AnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210D52C5247A65EC00B3A7EA /* AnswerView.xib */; };
+		2119EA6A247E6A550077FE7A /* MathView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2119EA69247E6A550077FE7A /* MathView.m */; };
+		2119EA6C247E6A630077FE7A /* MathView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2119EA6B247E6A630077FE7A /* MathView.xib */; };
 		218A0F09247C18D3001646A5 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A0F07247C18D3001646A5 /* GCDAsyncUdpSocket.m */; };
 		218A0F0A247C18D3001646A5 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 218A0F08247C18D3001646A5 /* GCDAsyncSocket.m */; };
 		218A0F18247CB945001646A5 /* IpConfigView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 218A0F15247CB944001646A5 /* IpConfigView.xib */; };
@@ -42,6 +44,9 @@
 		210D52C2247A65D700B3A7EA /* AnswerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnswerView.h; sourceTree = "<group>"; };
 		210D52C3247A65D700B3A7EA /* AnswerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnswerView.m; sourceTree = "<group>"; };
 		210D52C5247A65EC00B3A7EA /* AnswerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerView.xib; sourceTree = "<group>"; };
+		2119EA68247E6A550077FE7A /* MathView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathView.h; sourceTree = "<group>"; };
+		2119EA69247E6A550077FE7A /* MathView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathView.m; sourceTree = "<group>"; };
+		2119EA6B247E6A630077FE7A /* MathView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MathView.xib; sourceTree = "<group>"; };
 		218A0F05247C18D2001646A5 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		218A0F06247C18D2001646A5 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		218A0F07247C18D3001646A5 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
@@ -101,6 +106,9 @@
 				210D52C2247A65D700B3A7EA /* AnswerView.h */,
 				210D52C3247A65D700B3A7EA /* AnswerView.m */,
 				210D52C5247A65EC00B3A7EA /* AnswerView.xib */,
+				2119EA68247E6A550077FE7A /* MathView.h */,
+				2119EA69247E6A550077FE7A /* MathView.m */,
+				2119EA6B247E6A630077FE7A /* MathView.xib */,
 				210D52AA247A634300B3A7EA /* Main.storyboard */,
 				218A0F1A247CBA14001646A5 /* ConfigHeader.h */,
 				210D52AD247A634500B3A7EA /* Assets.xcassets */,
@@ -198,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2119EA6C247E6A630077FE7A /* MathView.xib in Resources */,
 				210D52B1247A634500B3A7EA /* LaunchScreen.storyboard in Resources */,
 				218A0F18247CB945001646A5 /* IpConfigView.xib in Resources */,
 				210D52AE247A634500B3A7EA /* Assets.xcassets in Resources */,
@@ -263,6 +272,7 @@
 				210D52C4247A65D700B3A7EA /* AnswerView.m in Sources */,
 				218A0F09247C18D3001646A5 /* GCDAsyncUdpSocket.m in Sources */,
 				218A0F0A247C18D3001646A5 /* GCDAsyncSocket.m in Sources */,
+				2119EA6A247E6A550077FE7A /* MathView.m in Sources */,
 				210D52BD247A63ED00B3A7EA /* StartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,7 +416,7 @@
 			baseConfigurationReference = 6690BCBBAF50C0AF56FB1A54 /* Pods-SumAudience.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 96E5N4445H;
 				INFOPLIST_FILE = SumAudience/Info.plist;
@@ -417,7 +427,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.com.SumAudience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = test;
+				PROVISIONING_PROFILE_SPECIFIER = adHoc;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -427,7 +437,7 @@
 			baseConfigurationReference = 0BAFF6B76D2BAF15911D8D83 /* Pods-SumAudience.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 96E5N4445H;
 				INFOPLIST_FILE = SumAudience/Info.plist;
@@ -438,7 +448,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.com.SumAudience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = test;
+				PROVISIONING_PROFILE_SPECIFIER = adHoc;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;

@@ -44,6 +44,10 @@
     self.listIP.delegate = self;
     self.audienceIP.delegate = self;
     
+    self.mainIP.text
+    = [[NSUserDefaults standardUserDefaults]objectForKey:@"IP"];
+    
+   
     
 }
 
@@ -81,6 +85,8 @@
     
     self.connectBlock ? self.connectBlock(IDStr, mainIPStr, listIPStr, audienceIPStr, type) : nil;
   
+    [[NSUserDefaults standardUserDefaults]setObject:mainIPStr forKey:@"IP"];
+    
 }
 
 

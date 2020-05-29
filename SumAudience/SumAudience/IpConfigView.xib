@@ -37,7 +37,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入观众ipad的ip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEO-ty-71M">
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入观众ipad的ip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEO-ty-71M">
                     <rect key="frame" x="332" y="460" width="360" height="50"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -48,7 +48,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入当前设备id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-37-rm2">
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入当前设备id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QtR-37-rm2">
                     <rect key="frame" x="332" y="160" width="360" height="50"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -70,7 +70,7 @@
                         <action selector="submitAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="bt7-TC-gc4"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入排行榜的ip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ilf-oa-I04">
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入排行榜的ip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ilf-oa-I04">
                     <rect key="frame" x="332" y="360" width="360" height="50"/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
@@ -82,7 +82,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekm-zN-OLJ">
-                    <rect key="frame" x="437" y="610" width="150" height="50"/>
+                    <rect key="frame" x="437" y="510" width="150" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="fig-t7-j91"/>
                         <constraint firstAttribute="height" constant="50" id="jcs-oI-X0h"/>
@@ -109,7 +109,7 @@
                 <constraint firstItem="ekm-zN-OLJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sKA-WQ-gVW"/>
                 <constraint firstItem="HxG-uq-xrV" firstAttribute="top" secondItem="QtR-37-rm2" secondAttribute="bottom" constant="50" id="sZS-Nc-uLk"/>
                 <constraint firstItem="FUp-AT-D5I" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wsy-dd-y7k"/>
-                <constraint firstItem="ekm-zN-OLJ" firstAttribute="top" secondItem="pEO-ty-71M" secondAttribute="bottom" constant="100" id="xAO-2v-uB7"/>
+                <constraint firstItem="ekm-zN-OLJ" firstAttribute="top" secondItem="pEO-ty-71M" secondAttribute="bottom" id="xAO-2v-uB7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

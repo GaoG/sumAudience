@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MathView">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KMg-dc-JRV">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbe-Qn-YZ0">
+                    <rect key="frame" x="312" y="284" width="400" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="6Gj-8f-d9U"/>
+                        <constraint firstAttribute="width" constant="400" id="C3Q-AT-mTl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KMg-dc-JRV" secondAttribute="trailing" id="5It-3h-roL"/>
+                <constraint firstItem="Qbe-Qn-YZ0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HRX-Dx-xsO"/>
+                <constraint firstItem="KMg-dc-JRV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ROS-XE-u62"/>
+                <constraint firstAttribute="bottom" secondItem="KMg-dc-JRV" secondAttribute="bottom" id="Zso-xs-lLb"/>
+                <constraint firstItem="KMg-dc-JRV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="guc-nr-TFK"/>
+                <constraint firstItem="Qbe-Qn-YZ0" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jer-Pk-Gx6"/>
+            </constraints>
+            <connections>
+                <outlet property="numberL" destination="Qbe-Qn-YZ0" id="VgI-QL-yzW"/>
+            </connections>
+        </view>
+    </objects>
+</document>
