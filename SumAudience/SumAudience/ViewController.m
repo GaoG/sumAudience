@@ -125,21 +125,28 @@
             
         }else if ([receiveStr isEqualToString:@"10"]){
             /// 回答完毕
+            [self.answerView setAnswerResult:1];
             [self operateView:self.answerView withState:NO];
+            
             
         }else if ([receiveStr isEqualToString:@"20"]){
             /// 晋级成功
-            self.startView.tipsLabel.text = @"晋级成功";
-            [self operateView:self.startView withState:NO];
+            [self.answerView setAnswerResult:2];
+            [self operateView:self.answerView withState:NO];
             
         }else if ([receiveStr isEqualToString:@"30"]){
             /// 晋级失败
-            self.startView.tipsLabel.text = @"晋级失败";
-            [self operateView:self.startView withState:NO];
+            [self.answerView setAnswerResult:3];
+            [self operateView:self.answerView withState:NO];
             
         }else if ([receiveStr isEqualToString:@"40"]){
-            /// 晋级失败
-            self.startView.tipsLabel.text = @"回答正确";
+            
+            [self.answerView setAnswerResult:100];
+            [self operateView:self.answerView withState:NO];
+            
+        }else if ([receiveStr isEqualToString:@"50"]){
+            /// 复位 回到logo 页
+            self.startView.tipsLabel.text = @"";
             [self operateView:self.startView withState:NO];
             
         }else {
@@ -148,11 +155,11 @@
             /// 这个主要是分数
             NSDictionary *dic = [self dictionaryWithJsonString:receiveStr];
             /// 第四关汉字
-            if([dic[@"type"] isEqualToString:@"chineseType"]){
+            if([dic[@"type"] isEqualToString:@"chineseNumber"]){
                 self.mathView.number =[NSString stringWithFormat:@"%@",dic[@"number"]];
                 [self operateView:self.mathView withState:NO];
                 
-            }else if ([dic[@"type"] isEqualToString:@"chineseHiden"]){
+            }else if ([dic[@"type"] isEqualToString:@"hideScored"]){
               /// 隐藏数字
                 
                 self.startView.tipsLabel.text = @"";

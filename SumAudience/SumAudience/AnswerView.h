@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AnswerView : UIView
 
-/// 结果
--(void)setAnswerResult:(NSString *)result;
+/// 结果 1回答完毕 2 成功 3失败
+-(void)setAnswerResult:(NSInteger )result;
 
 @end
 

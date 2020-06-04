@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_icon" translatesAutoresizingMaskIntoConstraints="NO" id="47F-Sv-ehD">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_icon" translatesAutoresizingMaskIntoConstraints="NO" id="47F-Sv-ehD">
                     <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDu-N8-fGR">
@@ -25,7 +25,7 @@
                         <constraint firstAttribute="width" constant="500" id="tSr-5x-CCC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                    <state key="normal" title="答题完毕">
+                    <state key="normal">
                         <color key="titleColor" red="1" green="0.94693648460000002" blue="0.021088741009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
@@ -40,11 +40,12 @@
                 <constraint firstItem="KDu-N8-fGR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="z6i-Xj-cz0"/>
             </constraints>
             <connections>
+                <outlet property="answerImage" destination="47F-Sv-ehD" id="eVL-6V-EwC"/>
                 <outlet property="tipsBut" destination="KDu-N8-fGR" id="bgT-QE-PNK"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="bg_icon" width="2737" height="2048"/>
+        <image name="logo_icon" width="2732" height="2048"/>
     </resources>
 </document>
