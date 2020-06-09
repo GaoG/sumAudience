@@ -136,8 +136,10 @@
             
         }else if ([receiveStr isEqualToString:@"30"]){
             /// 晋级失败
-            [self.answerView setAnswerResult:3];
-            [self operateView:self.answerView withState:NO];
+//            [self.answerView setAnswerResult:3];
+//            [self operateView:self.answerView withState:NO];
+            self.startView.tipsLabel.text = @"";
+            [self operateView:self.startView withState:NO];
             
         }else if ([receiveStr isEqualToString:@"40"]){
             
